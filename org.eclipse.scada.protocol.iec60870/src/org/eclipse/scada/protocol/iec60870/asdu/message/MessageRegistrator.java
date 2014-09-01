@@ -38,5 +38,7 @@ public class MessageRegistrator
         manager.registerClass ( DoubleCommand.class );
         manager.registerClass ( SetPointCommandShortFloatingPoint.class );
         manager.registerClass ( SetPointCommandScaledValue.class );
+        
+        manager.registerClass ( SetPointCommandNormalizedValue.class );
     }
 }
