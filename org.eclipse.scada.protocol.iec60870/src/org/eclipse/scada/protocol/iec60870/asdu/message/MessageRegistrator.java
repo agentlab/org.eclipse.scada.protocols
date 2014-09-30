@@ -40,5 +40,6 @@ public class MessageRegistrator
         manager.registerClass ( SetPointCommandScaledValue.class );
         
         manager.registerClass ( SetPointCommandNormalizedValue.class );
+        manager.registerClass ( SingleCommandCP56Time2a.class );
     }
 }
