@@ -22,6 +22,8 @@ import org.eclipse.scada.protocol.iec60870.asdu.message.MeasuredValueShortFloati
 import org.eclipse.scada.protocol.iec60870.asdu.message.MeasuredValueShortFloatingPointSingle;
 import org.eclipse.scada.protocol.iec60870.asdu.message.MeasuredValueShortFloatingPointTimeSingle;
 import org.eclipse.scada.protocol.iec60870.asdu.message.SetPointCommandNormalizedValue;
+import org.eclipse.scada.protocol.iec60870.asdu.message.SetPointCommandNormalizedValueCP56Time2a;
+import org.eclipse.scada.protocol.iec60870.asdu.message.SetPointCommandShortFloatingPointCP56Time2a;
 import org.eclipse.scada.protocol.iec60870.asdu.message.SingleCommandCP56Time2a;
 import org.eclipse.scada.protocol.iec60870.asdu.message.SinglePointInformationSequence;
 import org.eclipse.scada.protocol.iec60870.asdu.message.SinglePointInformationSingle;
@@ -60,5 +62,9 @@ public interface DataHandler
     public void process ( SetPointCommandNormalizedValue msg );
     
     public void process ( SingleCommandCP56Time2a msg );
-
+    
+    public void process ( SetPointCommandShortFloatingPointCP56Time2a msg );
+    
+    public void process ( SetPointCommandNormalizedValueCP56Time2a msg );
+    
 }

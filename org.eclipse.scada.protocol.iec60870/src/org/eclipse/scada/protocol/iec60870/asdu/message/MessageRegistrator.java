@@ -41,5 +41,7 @@ public class MessageRegistrator
         
         manager.registerClass ( SetPointCommandNormalizedValue.class );
         manager.registerClass ( SingleCommandCP56Time2a.class );
+        manager.registerClass ( SetPointCommandShortFloatingPointCP56Time2a.class );
+        manager.registerClass ( SetPointCommandNormalizedValueCP56Time2a.class );
     }
 }
