@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.eclipse.scada.protocol.iec60870.feature"
+      id="org.eclipse.scada.protocol.iec60870.feature.source"
       label="%featureName"
       version="0.2.0.qualifier"
       provider-name="%providerName"
@@ -27,7 +27,7 @@
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
+   <!--<plugin
          id="org.eclipse.scada.protocol.iec60870.server"
          download-size="0"
          install-size="0"
@@ -53,6 +53,6 @@
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>
+         unpack="false"/>-->
 
 </feature>

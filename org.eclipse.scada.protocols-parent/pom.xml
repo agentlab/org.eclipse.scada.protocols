@@ -3,60 +3,22 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.eclipse.scada.releng</groupId>
-		<artifactId>superParent</artifactId>
-		<version>0.2.0-SNAPSHOT</version>
-	</parent>
-
 	<groupId>org.eclipse.scada.protocols</groupId>
 	<artifactId>org.eclipse.scada.protocols-parent</artifactId>
 	<version>0.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho.scmUrl>scm:git:git://git.eclipse.org/gitroot/scada/org.eclipse.scada.protocols.git</tycho.scmUrl>
+		<tycho-version>0.21.0</tycho-version>
+		<tycho-extras-version>0.21.0</tycho-extras-version>
+		<platform-version>[4.4,4.5)</platform-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>repo.eclipse.scada.org</id>
-			<name>Eclipse SCADA Repository</name>
-			<url>https://repo.eclipse.org/content/groups/eclipsescada/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
-	<profiles>
-		<profile>
-			<id>nightly</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<repositories>
-				<repository>
-					<id>eclipse.scada.utils</id>
-					<layout>p2</layout>
-					<url>https://hudson.eclipse.org/eclipsescada/job/org.eclipse.scada.utils-master/lastSuccessfulBuild/artifact/output/p2</url>
-				</repository>
-				<repository>
-					<id>eclipse.scada.external</id>
-					<layout>p2</layout>
-					<url>https://hudson.eclipse.org/eclipsescada/job/org.eclipse.scada.external-master/lastSuccessfulBuild/artifact/output/p2</url>
-				</repository>
-			</repositories>
-		</profile>
-	</profiles>
-
 	<modules>
-		<module>../org.eclipse.scada.protocols-p2</module> <!-- holds the p2 repository -->
+		<!--<module>../org.eclipse.scada.protocols-p2</module>--> <!-- holds the p2 repository -->
 
-		<module>../org.eclipse.scada.protocols.feature</module>
+		<!--<module>../org.eclipse.scada.protocols.feature</module>
 		<module>../org.eclipse.scada.protocols.sdk.feature</module>
 
 		<module>../org.eclipse.scada.protocols.editors.feature</module>
@@ -75,11 +37,12 @@
 		<module>../org.eclipse.scada.protocols</module>
 
 		<module>../org.eclipse.scada.protocol.ngp.generator</module>
-		<module>../org.eclipse.scada.protocol.ngp.generator.ui</module>
+		<module>../org.eclipse.scada.protocol.ngp.generator.ui</module>-->
 
 		<!-- IEC 60870 -->
 
 		<module>../org.eclipse.scada.protocol.iec60870.feature</module>
+		<module>../org.eclipse.scada.protocol.iec60870.feature.source</module>
 
 		<module>../org.eclipse.scada.protocol.iec60870</module>
 		<module>../org.eclipse.scada.protocol.iec60870.server</module>
@@ -90,5 +53,117 @@
 
 		<module>../org.eclipse.scada.protocol.iec60870.client</module>
 		<module>../org.eclipse.scada.protocol.iec60870.client.data</module>
+		
+		<!--  -->
+		<module>../org.eclipse.scada.protocol.iec60870-p2</module>
+		<module>../org.eclipse.scada.protocol.iec60870-target</module>
 	</modules>
+
+	<build>
+		<plugins>
+		
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<target>
+						<artifact>
+							<groupId>org.eclipse.scada.protocols</groupId>
+							<artifactId>org.eclipse.scada.protocol.iec60870-target</artifactId>
+							<version>0.2.0-SNAPSHOT</version>
+							<classifier>org.eclipse.scada.protocol.iec60870-target</classifier>
+						</artifact>
+					</target>
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+
+		<!-- defines the default settings for the used plugins -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-source-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<executions>
+						<execution>
+							<id>plugin-source</id>
+							<goals>
+								<goal>plugin-source</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-source-feature-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<executions>
+						<execution>
+							<id>source-feature</id>
+							<phase>package</phase>
+							<goals>
+								<goal>source-feature</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-packaging-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<archiveSite>true</archiveSite>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>mvnrepository</id>
+			<name>mvnrepository</name>
+			<url>http://mvnrepository.com</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<repositories>
+		<repository>
+		  <id>mvnrepository</id>
+		  <name>mvnrepository</name>
+		  <url>http://mvnrepository.com</url>
+		</repository>
+		
+		<repository> 
+			<id>tilab</id> 
+			<url>http://jade.tilab.com/maven/</url> 
+		</repository>
+	</repositories>
 </project>

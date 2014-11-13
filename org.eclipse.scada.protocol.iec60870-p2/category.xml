@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.scada.protocol.iec60870.feature_0.2.0.qualifier.jar" id="org.eclipse.scada.protocol.iec60870.feature" version="0.2.0.qualifier"></feature>
+   <feature url="features/org.eclipse.scada.protocol.iec60870.feature.source_0.2.0.qualifier.jar" id="org.eclipse.scada.protocol.iec60870.feature.source" version="0.2.0.qualifier"></feature>
+</site>
