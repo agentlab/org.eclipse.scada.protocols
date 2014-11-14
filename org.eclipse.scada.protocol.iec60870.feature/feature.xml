@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.eclipse.scada.protocol.iec60870.feature"
-      label="%featureName"
+      label="Eclipse SCADA - IEC60870 protocol stack (Incubation)"
       version="0.2.0.qualifier"
-      provider-name="%providerName"
+      provider-name="Eclipse SCADA Project"
       plugin="org.eclipse.scada.protocols"
       license-feature="org.eclipse.scada.license"
       license-feature-version="0.1.0.qualifier">
