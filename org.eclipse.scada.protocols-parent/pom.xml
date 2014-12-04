@@ -41,9 +41,6 @@
 
 		<!-- IEC 60870 -->
 
-		<module>../org.eclipse.scada.protocol.iec60870.feature</module>
-		<module>../org.eclipse.scada.protocol.iec60870.feature.source</module>
-
 		<module>../org.eclipse.scada.protocol.iec60870</module>
 		<module>../org.eclipse.scada.protocol.iec60870.server</module>
 		<module>../org.eclipse.scada.protocol.iec60870.server.data</module>
@@ -55,6 +52,9 @@
 		<module>../org.eclipse.scada.protocol.iec60870.client.data</module>
 		
 		<!--  -->
+		<module>../org.eclipse.scada.protocol.iec60870.feature</module>
+		<module>../org.eclipse.scada.protocol.iec60870.feature.source</module>
+		
 		<module>../org.eclipse.scada.protocol.iec60870-p2</module>
 		<module>../org.eclipse.scada.protocol.iec60870-target</module>
 	</modules>
@@ -160,10 +160,6 @@
 		  <name>mvnrepository</name>
 		  <url>http://mvnrepository.com</url>
 		</repository>
-		
-		<repository> 
-			<id>tilab</id> 
-			<url>http://jade.tilab.com/maven/</url> 
-		</repository>
 	</repositories>
+
 </project>

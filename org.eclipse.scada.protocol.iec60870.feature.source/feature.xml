@@ -21,38 +21,38 @@
    </license>
 
    <plugin
-         id="org.eclipse.scada.protocol.iec60870"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <!--<plugin
-         id="org.eclipse.scada.protocol.iec60870.server"
+         id="org.eclipse.scada.protocol.iec60870.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.scada.protocol.iec60870.server.data"
+         id="org.eclipse.scada.protocol.iec60870.server.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.scada.protocol.iec60870.client"
+         id="org.eclipse.scada.protocol.iec60870.server.data.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.scada.protocol.iec60870.client.data"
+         id="org.eclipse.scada.protocol.iec60870.client.source"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         unpack="false"/>-->
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.scada.protocol.iec60870.client.data.source"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

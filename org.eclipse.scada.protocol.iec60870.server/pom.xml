@@ -10,4 +10,13 @@
   <artifactId>org.eclipse.scada.protocol.iec60870.server</artifactId>
   
   <packaging>eclipse-plugin</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
