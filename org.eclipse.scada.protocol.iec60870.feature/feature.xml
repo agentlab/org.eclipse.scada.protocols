@@ -4,7 +4,6 @@
       label="Eclipse SCADA - IEC60870 protocol stack (Incubation)"
       version="0.2.0.qualifier"
       provider-name="Eclipse SCADA Project"
-      plugin="org.eclipse.scada.protocols"
       license-feature="org.eclipse.scada.license"
       license-feature-version="0.1.0.qualifier">
 
@@ -19,6 +18,17 @@
    <license url="%licenseURL">
       %license
    </license>
+
+   <requires>
+      <import plugin="com.google.guava"/>
+      <import plugin="io.netty.buffer"/>
+      <import plugin="io.netty.transport"/>
+      <import plugin="io.netty.codec"/>
+      <import plugin="io.netty.common"/>
+      <import plugin="org.eclipse.scada.utils"/>
+      <import plugin="org.slf4j.api"/>
+      <import plugin="io.netty.handler"/>
+   </requires>
 
    <plugin
          id="org.eclipse.scada.protocol.iec60870"
